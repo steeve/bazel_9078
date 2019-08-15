@@ -1,0 +1,21 @@
+load("//:cpp.bzl", "test_cpp")
+
+platform(
+    name = "ios_arm",
+    constraint_values = [
+        "@bazel_tools//platforms:ios",
+        "@bazel_tools//platforms:arm",
+    ],
+)
+
+platform(
+    name = "ios_arm64",
+    constraint_values = [
+        "@bazel_tools//platforms:ios",
+        "@bazel_tools//platforms:aarch64",
+    ],
+)
+
+test_cpp(
+    name = "test",
+)
